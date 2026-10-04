@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareRelay Local</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="hero">
+            <div>
+                <p class="eyebrow">LOCAL AI CARE HANDOVER</p>
+
+                <h1>CareRelay Local</h1>
+
+                <p class="subtitle">
+                    Turn rough care notes into a clear handover
+                    using AI that runs locally on your computer.
+                </p>
+            </div>
+
+            <div
+                id="localStatus"
+                class="privacy-badge status-checking">
+
+                <span
+                    id="statusDot"
+                    class="status-dot">
+                </span>
+
+                <div>
+                    <strong id="statusTitle">
+                        Checking local AI...
+                    </strong>
+
+                    <small id="statusDescription">
+                        Verifying Ollama and Gemma
+                    </small>
+                </div>
+
+            </div>
+        </header>
+
+
+        <section class="workspace">
+
+            <div class="card">
+
+                <div class="card-heading">
+                    <div>
+                        <p class="step">STEP 1</p>
+                        <h2>Today's care notes</h2>
+                    </div>
+
+                    <button
+                        id="sampleButton"
+                        class="secondary-button"
+                        type="button">
+                        Use sample
+                    </button>
+                </div>
+
+                <textarea
+                    id="notes"
+                    maxlength="5000"
+                    placeholder="Example: Breakfast at 8. Ate about half. Medicine after breakfast. Went outside around 10..."
+                ></textarea>
+                
+                <div class="textarea-footer">
+                    <span>
+                        Write naturally. CareRelay will organize it.
+                    </span>
+
+                    <span id="characterCount">
+                        0 / 5000
+                    </span>
+                </div>
+
+                <div class="options">
+
+                    <div class="field">
+                        <label for="audience">
+                            Report for
+                        </label>
+
+                        <select id="audience">
+                            <option value="caregiver">
+                                Next caregiver
+                            </option>
+
+                            <option value="family">
+                                Family member
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="model">
+                            AI model
+                        </label>
+
+                        <select id="model">
+                            <option value="gemma3:4b">
+                                Gemma 3 4B
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button
+                    id="generateButton"
+                    class="primary-button"
+                    type="button">
+
+                    <span id="generateText">
+                        Generate handover
+                    </span>
+
+                </button>
+
+                <p
+                    id="errorMessage"
+                    class="error-message">
+                </p>
+
+            </div>
+
+
+            <div class="card output-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <p class="step">STEP 2</p>
+                        <h2>Generated handover</h2>
+                    </div>
+
+                    <div class="output-actions">
+
+                        <button
+                            id="copyButton"
+                            class="secondary-button"
+                            type="button"
+                            disabled>
+                            Copy
+                        </button>
+
+                        <button
+                            id="downloadButton"
+                            class="secondary-button"
+                            type="button"
+                            disabled>
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="emptyState"
+                    class="empty-state">
+
+                    <div class="empty-icon">
+                        ✨
+                    </div>
+
+                    <h3>Your handover will appear here</h3>
+
+                    <p>
+                        Add today's notes and generate a structured
+                        report using local AI.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="loadingState"
+                    class="hidden loading-state">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Gemma is preparing the handover locally...
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="result"
+                    class="hidden result">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>
+                CareRelay Local · Powered locally by
+                Gemma 3 + Ollama
+            </p>
+
+            <p class="footer-note">
+                This tool reorganizes supplied notes and does not
+                provide medical advice.
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
