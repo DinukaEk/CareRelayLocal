@@ -126,7 +126,7 @@ ollama list
 Clone the repository:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/DinukaEk/CareRelayLocal.git
 cd CareRelayLocal
 ```
 
