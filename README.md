@@ -6,6 +6,18 @@ CareRelay Local turns rough daily caregiving notes into clear, structured handov
 
 No cloud AI API is required. After the model has been downloaded, the AI processing can run locally on the user's computer.
 
+## Demo
+
+![CareRelay Local](screenshots/01-home.png)
+
+### Rough notes to structured handover
+
+![Generated caregiver handover](screenshots/03-caregiver-handover.png)
+
+### Family-friendly mode
+
+![Family mode](screenshots/04-family-mode.png)
+
 ## Why I Built It
 
 I built CareRelay Local for someone close to me who sometimes needs to keep track of caregiving information and pass important details to another person.
